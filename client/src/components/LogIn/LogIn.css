@@ -1,0 +1,12 @@
+.LogInContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.LogInCard {
+    display: flex;
+    flex-direction: column;
+}
