@@ -1,7 +1,7 @@
 {
   "name": "shelter-app",
   "version": "0.1.0",
-  "description": "Animal Shelter App",
+  "description": "shelter-app",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
