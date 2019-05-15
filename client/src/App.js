@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import logo from "./logo.svg";
 // import "./App.css";
 import LogIn from "./components/LogIn/LogIn";
-import SignUp from "./components/SignUp";
-import LandingPage from "./components/LandingPage";// Landing Page is Animal Page
+import SignUp from "./components/SignUp/SignUp";
+import LandingPage from "./components/LandingPage/LandingPage";// Landing Page is Animal Page
 
 class App extends Component {
   render() {
