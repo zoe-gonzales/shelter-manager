@@ -22,5 +22,7 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "react-router-dom": "^5.0.0"
+    "path": "^0.12.7"
+>>>>>>> 58e485e75fdea25d25b937f9cf68d243f39cb0b9
   }
 }
