@@ -17,8 +17,8 @@ class App extends Component {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/add" component={AddAnimalForm}/>
-        <Route exact path="/medical" component={AddMedicalForm}/>
+        <Route exact path="/add/animal" component={AddAnimalForm}/>
+        <Route exact path="/add/medical" component={AddMedicalForm}/>
         </Switch>
 
       </Router>
