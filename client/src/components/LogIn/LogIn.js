@@ -7,7 +7,7 @@ class LogIn extends Component {
         email: "",
         password: ""
     }
-
+  
 handleInputChange = (event) => {
     const  {
         name, value
