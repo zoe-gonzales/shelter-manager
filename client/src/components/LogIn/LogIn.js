@@ -9,7 +9,7 @@ class LogIn extends Component {
     }
 
 handleInputChange = (event) => {
-    const {
+    const  {
         name, value
     } = event.target
     this.setState ({[name]: value})
