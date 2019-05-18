@@ -1,7 +1,8 @@
 import React from "react";
-import "../Jumbotron/Jumbotron.css"
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Container from 'react-bootstrap/Container'
+import "../Jumbotron/Jumbotron.css";
+// import Jumbotron from 'react-bootstrap/Jumbotron'
+// import Container from 'react-bootstrap/Container'
+import { Navbar, Nav, NavDropdown, Jumbotron, Form, FormControl, Button,Container } from "react-bootstrap";
 
 
 function Header() {
@@ -10,7 +11,7 @@ function Header() {
 
     <Jumbotron fluid>
       <Container>
-        <h1>Shelter Manager</h1>
+        <h1>Journey's Shelter Management Application</h1>
 
       </Container>
     </Jumbotron>
