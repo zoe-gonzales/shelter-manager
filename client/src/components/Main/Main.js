@@ -1,7 +1,7 @@
 import React from "react";
 
-import Find from "../LandingPage/Search";
-import ImageHome from "../LandingPage/ImageCard";
+import Find from "./Search";
+import ImageHome from "./ImageCard";
 
 
 
