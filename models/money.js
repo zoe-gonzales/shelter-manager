@@ -8,5 +8,5 @@ const moneySchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const money = mongoose.model("money", moneySchema);
-module.exports = money;
+const Money = mongoose.model("Money", moneySchema);
+module.exports = Money;
