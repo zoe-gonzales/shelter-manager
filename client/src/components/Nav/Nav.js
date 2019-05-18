@@ -1,8 +1,8 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Jumbotron, Form, FormControl, Button } from 'react-bootstrap';
-import "../LandingPage/Nav.css"
+import "../Nav/Nav.css"
 // import Nav from 'react-bootstrap/Nav'
 // import Navbar from 'react-bootstrap/Navbar'
+import { Navbar, Nav, NavDropdown, Jumbotron, Form, FormControl, Button,Container } from "react-bootstrap";
 
 
 // export default Nav;

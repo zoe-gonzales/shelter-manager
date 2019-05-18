@@ -7,9 +7,9 @@ import SignUp from "./components/SignUp/SignUp";
 import LandingPage from "./components/LandingPage/LandingPage";// Landing Page is Animal Page
 import AddAnimalForm from './components/AddAnimalForm';
 import AddMedicalForm from './components/AddMedicalForm';
-import Navigator from './components/LandingPage/Nav';
-import Header from './components/LandingPage/Jumbotron';
-import Footer from './components/LandingPage/Footer';
+import Navigator from './components/Nav/Nav';
+import Header from './components/Jumbotron/Jumbotron';
+import Footer from './components/Footer/Footer';
   
 
 class App extends Component {

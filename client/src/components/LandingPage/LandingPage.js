@@ -4,10 +4,13 @@ import Find from "../LandingPage/Search";
 import ImageHome from "../LandingPage/ImageCard";
 
 
+
+
+
 const LandingPage = () => {
 
   return (
-    <div className="container">
+    <div id="ll"className="container">
       <Find />
       <br />
       <ImageHome />
