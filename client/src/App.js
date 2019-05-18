@@ -10,7 +10,7 @@ import AddMedicalForm from './components/AddMedicalForm';
 import Navigator from './components/LandingPage/Nav';
 import Header from './components/LandingPage/Jumbotron';
 import Footer from './components/LandingPage/Footer';
-
+  
 
 class App extends Component {
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
        <Header/>
         
         <Switch>
-       { <Route exact path="/" component={LandingPage} />}
+        <Route exact path="/"  component={LandingPage} />
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
         <Route exact path="/add/animal" component={AddAnimalForm}/>

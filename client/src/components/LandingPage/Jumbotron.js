@@ -10,7 +10,7 @@ function Header() {
 
     <Jumbotron fluid>
       <Container>
-        <h1>Shelter Manager</h1>
+        <h1>Journey's Shelter Management Application</h1>
 
       </Container>
     </Jumbotron>
