@@ -10,6 +10,7 @@ import AddMedicalForm from './components/AddMedicalForm';
 import Navigator from './components/Nav/Nav';
 import Header from './components/Jumbotron/Jumbotron';
 import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
   
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
      
       <Router >
        <Navigator/>
+       <NavBar/>
        <Header/>
         
         <Switch>
