@@ -1,5 +1,5 @@
 import React from "react";
-import "../LandingPage/Nav.css"
+import "../Nav/Nav.css"
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 
