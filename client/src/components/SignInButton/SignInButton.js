@@ -1,19 +1,15 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
-import "../NavBar/NavBar.css";
 import auth0Client from '../../Auth';
 
-function NavBar(props) {
+function SignInButton(props) {
   const signOut = () => {
     auth0Client.signOut();
     props.history.replace('/');
   };
 
   return (
-    <nav className="navbar navbar-dark bg-primary fixed-top">
-      <Link className="navbar-brand" to="/">
-        Q&App
-      </Link>
+    <div className="text-center">
       {
         !auth0Client.isAuthenticated() &&
         <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
@@ -25,8 +21,8 @@ function NavBar(props) {
           <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out</button>
         </div>
       }
-    </nav>
+    </div>
   );
 }
 
-export default withRouter(NavBar);
+export default withRouter(SignInButton);
