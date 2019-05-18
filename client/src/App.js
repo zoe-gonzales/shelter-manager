@@ -10,6 +10,8 @@ import AddMedicalForm from './components/AddMedicalForm';
 import Navigator from './components/Nav/Nav';
 import Header from './components/Jumbotron/Jumbotron';
 import Footer from './components/Footer/Footer';
+import NavBar from './components/NavBar/NavBar';
+import Callback from './components/Callback/Callback';
   
 
 class App extends Component {
@@ -18,9 +20,11 @@ class App extends Component {
      
       <Router >
        <Navigator/>
+       <NavBar/>
        <Header/>
         
         <Switch>
+        <Route exact path='/callback' component={Callback}/>
         <Route exact path="/"  component={Main} />
         <Route exact path="/login" component={LogIn} />
         <Route exact path="/signup" component={SignUp} />
