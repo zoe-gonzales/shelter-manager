@@ -1,5 +1,5 @@
 {
-  "name": "shelter-app",
+    "name": "shelter-app",
   "version": "1.0.0",
   "description": "Animal Shelter App",
   "main": "server.js",
