@@ -1,5 +1,5 @@
 {
-    "name": "shelter-app",
+  "name": "shelter-app",
   "version": "1.0.0",
   "description": "Animal Shelter App",
   "main": "server.js",
@@ -21,6 +21,8 @@
   "dependencies": {
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "mongojs": "^2.6.0",
+    "morgan": "^1.9.1",
     "path": "^0.12.7"
   }
 }
