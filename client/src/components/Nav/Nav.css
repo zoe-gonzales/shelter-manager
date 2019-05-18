@@ -4,7 +4,15 @@
 
 } */
 
-div#basic-navbar-nav {
+/* div#basic-navbar-nav {
   margin-left: 45%;
+} */
+
+.mr-auto, .mx-auto {
+  margin-right: 0 !important;
+}
+
+#basic-navbar-nav {
+  justify-content: flex-end;
 }
 

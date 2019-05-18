@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../LandingPage/ImageCard.css"
+import "../Main/ImageCard.css"
 import Card from 'react-bootstrap/Card';
 import CardDeck from 'react-bootstrap/CardDeck';
 

@@ -1,13 +1,13 @@
 import React from "react";
 
-import Find from "../LandingPage/Search";
-import ImageHome from "../LandingPage/ImageCard";
+import Find from "../Main/Search";
+import ImageHome from "../Main/ImageCard";
 
 
 
 
 
-const LandingPage = () => {
+const Main = () => {
 
   return (
     <div id="ll"className="container">
@@ -20,4 +20,4 @@ const LandingPage = () => {
   )
 }
 
-export default LandingPage;
+export default Main;
