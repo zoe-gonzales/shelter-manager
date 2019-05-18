@@ -1,4 +1,5 @@
 module.exports = {
     Animal: require("./animal"),
-    MaterialDonation: require("./material")
+    MaterialDonation: require("./materialDonation"),
+    MoneyDonation: require("./money")
 };
