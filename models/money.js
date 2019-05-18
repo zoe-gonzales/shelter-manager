@@ -1,6 +1,3 @@
-import React from "react";
-
-// do we need this?
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -11,6 +8,5 @@ const moneySchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Money = mongoose.model("Money", moneySchema);
-
-module.exports = Money;
+const money = mongoose.model("money", moneySchema);
+module.exports = money;
