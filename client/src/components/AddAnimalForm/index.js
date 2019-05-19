@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import API from '../../utils/API';
 import './style.css';
 
 class InputForm extends Component {
@@ -20,7 +21,19 @@ class InputForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        // this is where data from state will be added to db via create method
+        const animal = {
+            name: this.state.name,
+            animalType: this.state.type,
+            spayNeuter: this.state.spayNeuter,
+            vaccinations: this.state.vaccinations,
+            schedule: this.state.schedule,
+            notes: this.state.notes
+        }
+        API.createAnimal(animal)
+           .then(res => {
+                console.log(res)
+           })
+           .catch(error => console.log(error));
     }
 
     render() {
@@ -39,7 +52,7 @@ class InputForm extends Component {
                 {/* Spay/Neuter */}
                 <Form.Group controlId="Form.SpayNeuter">
                     <Form.Label>Spay/Neuter</Form.Label>
-                    <Form.Control as="select" name="spayneuter" value={this.state.spayNeuter} onChange={this.handleInputChange}>
+                    <Form.Control as="select" name="spayNeuter" value={this.state.spayNeuter} onChange={this.handleInputChange}>
                     <option>Yes</option>
                     <option>No</option>
                     </Form.Control>
