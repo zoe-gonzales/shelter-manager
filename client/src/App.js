@@ -10,6 +10,7 @@ import Header from './components/Jumbotron/Jumbotron';
 import Footer from './components/Footer/Footer';
 import WelcomePage from './components/WelcomePage/WelcomePage';
 import Callback from './components/Callback/Callback';
+import MaterialDonationForm from './components/MaterialDonationForm';
   
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
         <Route exact path="/main"  component={Main} />
         <Route exact path="/add/animal" component={AddAnimalForm}/>
         <Route exact path="/add/medical" component={AddMedicalForm}/>
+        <Route exact path="/donate/material" component={MaterialDonationForm}/>
         </Switch>
 
       <Footer/>

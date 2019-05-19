@@ -20,7 +20,7 @@ const animalSchema = new Schema({
     },
     recordsLink: {
         type: String,
-        required: true
+        // required: true
     },
     schedule: {
         type: Array,
@@ -29,7 +29,11 @@ const animalSchema = new Schema({
     notes: {
         type: Array,
         required: true
-    }
+    },
+    medicalRecords: [{
+        type: Schema.Types.ObjectId,
+        ref: "MedicalRecord"
+    }]
 });
 
 const Animal = mongoose.model("Animal", animalSchema);
