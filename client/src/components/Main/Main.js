@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 import Find from "../Main/Search";
@@ -18,6 +19,41 @@ const Main = () => {
       {/* <h1>This is the landing page after sign-in or sign-up(Animal Page)</h1> */}
     </div>
   )
+=======
+import React, { Component } from "react";
+import Find from "./Search";
+import ImageHome from "./ImageCard";
+import API from '../../utils/API';
+
+
+
+
+class Main extends Component {
+  state = {
+    animalsList: []
+  }
+
+  componentDidMount() {
+    API.getAllAnimals()
+       .then(res => {
+         console.log(res.data);
+         this.setState({ animalsList: res.data });
+       })
+       .catch(error => console.log(error));
+  }
+
+  render() {
+    return (
+      <div id="ll"className="container">
+        <Find />
+        <br />
+        <ImageHome animalsList={this.state.animalsList} />
+  
+        {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
+      </div>
+    )
+  }
+>>>>>>> 2cf3eabdc301a6f4ec68316bc2606b4b75e51f56
 }
 
 export default Main;
