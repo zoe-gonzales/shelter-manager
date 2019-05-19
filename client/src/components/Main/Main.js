@@ -1,5 +1,4 @@
 import React from "react";
-
 import Find from "./Search";
 import ImageHome from "./ImageCard";
 
@@ -7,7 +6,7 @@ import ImageHome from "./ImageCard";
 
 
 
-const LandingPage = () => {
+const Main = () => {
 
   return (
     <div id="ll"className="container">
@@ -15,9 +14,9 @@ const LandingPage = () => {
       <br />
       <ImageHome />
 
-      {/* <h1>This is the landing page after sign-in or sign-up(Animal Page)</h1> */}
+      {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
     </div>
   )
 }
 
-export default LandingPage;
+export default Main;
