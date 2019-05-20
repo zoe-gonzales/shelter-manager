@@ -26,7 +26,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/"  component={WelcomePage} />
         <Route exact path='/callback' component={Callback}/>
-        <Route exact path="/"  component={Main} />
+        <Route exact path="/main"  component={Main} />
         {/* <Route exact path="/login" component={LogIn} /> */}
         {/* <Route exact path="/signup" component={SignUp} /> */}
         <Route exact path="/add/animal" component={AddAnimalForm}/>
