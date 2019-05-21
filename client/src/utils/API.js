@@ -12,5 +12,8 @@ export default {
     },
     updateAnimal: function(id) {
         return axios.put("/api/animals/" + id);
+    },
+    getPDF: function(id) {
+        return axios.get("/api/animals/pdf/" + id);
     }
 }

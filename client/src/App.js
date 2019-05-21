@@ -13,6 +13,7 @@ import Footer from './components/Footer/Footer';
 import WelcomePage from './components/WelcomePage/WelcomePage';
 import Callback from './components/Callback/Callback';
 import MaterialDonationForm from './components/MaterialDonationForm';
+import AnimalDetail from './components/AnimalDetail';
   
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
         <Route exact path="/"  component={WelcomePage} />
         <Route exact path='/callback' component={Callback}/>
         <Route exact path="/main"  component={Main} />
+        <Route exact path="/animal/:id" component={AnimalDetail}/>
         {/* <Route exact path="/login" component={LogIn} /> */}
         {/* <Route exact path="/signup" component={SignUp} /> */}
         <Route exact path="/add/animal" component={AddAnimalForm}/>

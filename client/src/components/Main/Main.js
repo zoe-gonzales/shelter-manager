@@ -23,7 +23,7 @@ class Main extends Component {
         <Find />
         <br />
         {this.state.animalsList.map(animal => {
-          return <ImageHome animal={animal} />;
+          return <ImageHome animal={animal} key={animal._id} />;
         })}
         {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
       </div>

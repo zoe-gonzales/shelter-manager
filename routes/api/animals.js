@@ -12,4 +12,9 @@ router
   .get(animalController.findById)
   .put(animalController.update);
 
+// Matches with "/api/animals/pdf/:id"
+router
+  .route("/pdf/:id")
+  .get(animalController.makePDF);
+
 module.exports = router;

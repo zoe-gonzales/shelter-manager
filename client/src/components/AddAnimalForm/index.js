@@ -7,6 +7,7 @@ import './style.css';
 class InputForm extends Component {
     state = {
         name: '',
+        age: '',
         type: '',
         spayNeuter: 'No',
         vaccinations: '',
@@ -24,7 +25,7 @@ class InputForm extends Component {
         const animal = {
             name: this.state.name,
             animalType: this.state.type,
-            age: this.state.type,
+            age: parseInt(this.state.age),
             spayNeuter: this.state.spayNeuter,
             vaccinations: this.state.vaccinations,
             schedule: this.state.schedule,
