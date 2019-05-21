@@ -24,6 +24,7 @@ class InputForm extends Component {
         const animal = {
             name: this.state.name,
             animalType: this.state.type,
+            age: this.state.type,
             spayNeuter: this.state.spayNeuter,
             vaccinations: this.state.vaccinations,
             schedule: this.state.schedule,
@@ -48,6 +49,11 @@ class InputForm extends Component {
                 <Form.Group controlId="Form.Type">
                     <Form.Label>Type</Form.Label>
                     <Form.Control type="text" name="type" value={this.state.type} onChange={this.handleInputChange}/>
+                </Form.Group>
+                {/* Animal Age */}
+                <Form.Group controlId="Form.Age">
+                    <Form.Label>Age</Form.Label>
+                    <Form.Control type="text" name="age" value={this.state.age} onChange={this.handleInputChange}/>
                 </Form.Group>
                 {/* Spay/Neuter */}
                 <Form.Group controlId="Form.SpayNeuter">

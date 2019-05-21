@@ -6,6 +6,10 @@ const animalSchema = new Schema({
         type: String,
         required: true
     },
+    age: {
+        type: Number,
+        required: true
+    },
     animalType: {
         type: String,
         required: true
