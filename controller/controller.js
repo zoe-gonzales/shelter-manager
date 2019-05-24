@@ -18,9 +18,9 @@ module.exports = {
         .catch(error => console.log(error));
     },
     add: function(req, res) {
-        const data = fs.readFileSync(req.body.image);
-        db.Animal.image.data = binData(data);
-        db.Animal.image.contentType = 'image/jpg';
+        // const data = fs.readFileSync(req.body.image);
+        // db.Animal.image.data = binData(data);
+        // db.Animal.image.contentType = 'image/jpg';
         
         db.Animal
           .create(req.body)
