@@ -1,6 +1,8 @@
 const db = require("../models");
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
+const mongoose = require("mongoose");
+const binData = mongoose.mongo.Binary;
 
 module.exports = {
     findAll: function(req, res) {
@@ -16,6 +18,10 @@ module.exports = {
         .catch(error => console.log(error));
     },
     add: function(req, res) {
+        // const data = fs.readFileSync(req.body.image);
+        // db.Animal.image.data = binData(data);
+        // db.Animal.image.contentType = 'image/jpg';
+        
         db.Animal
           .create(req.body)
           .then(result => res.json(result))

@@ -1,57 +1,35 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import API from '../../utils/API';
-import ImageUploader from 'react-images-upload';
-import './style.css';
+import { Link } from 'react-router-dom';
+// import API from '../../utils/API';
 
-class InputForm extends Component {
+class AnimalInfoPage extends Component {
     state = {
-        name: '',
-        age: '',
-        type: '',
-        spayNeuter: 'No',
-        vaccinations: '',
-        schedule: '',
-        notes: '',
-        picture: ''
+        name: "",
+        type: "",
+        age: "",
+        spayNeuter: "",
+        vaccinations: "",
+        schedule: "",
+        notes: ""
     }
 
-    onDrop = (picture, file) => {
-        console.log(picture)
-        console.log(file);
-        this.setState({
-            picture: file[0]
-        });
-    }
-
-    handleInputChange = event => {
-        let { name, value } = event.target;
-        this.setState({ [name]: value });
-    }
-
-    handleSubmit = event => {
-        event.preventDefault();
-        const animal = {
-            name: this.state.name,
-            animalType: this.state.type,
-            age: parseInt(this.state.age),
-            spayNeuter: this.state.spayNeuter,
-            vaccinations: this.state.vaccinations,
-            schedule: this.state.schedule,
-            notes: this.state.notes,
-            image: this.state.picture
-        }
-        API.createAnimal(animal)
-           .then(res => {
-                console.log(res)
-           })
-           .catch(error => console.log(error));
+    handleInputChange = e => {
+        const{name, value} = e.target
+        this.setState({[name]:value})
     }
 
     render() {
-        return (
-            <Form className="input-form" encType="multipart/form-data">
+        return(
+            <Container>
+                <Row>
+                    <Col>
+                        <img src={require('../../images/Journey.jpeg')} height="300" width="300"/>
+                    </Col>
+                    <Col>
+                    <Form className="input-form">
                 {/* Animal Name */}
                 <Form.Group controlId="Form.Name">
                     <Form.Label>Name</Form.Label>
@@ -80,30 +58,44 @@ class InputForm extends Component {
                     <Form.Label>Vaccinations</Form.Label>
                     <Form.Control as="textarea" name="vaccinations" rows="3" value={this.state.vaccinations} onChange={this.handleInputChange}/>
                 </Form.Group>
-                {/* Schedule */}
-                <Form.Group controlId="Form.Schedule">
+            </Form>
+                    </Col>
+                    <Col>
+                        <Link to="/add/medical">
+                            Medical Records
+                        </Link>
+                        <br/><br/>
+                        <Link to="/main">
+                            Home
+                        </Link>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                    {/* Schedule */}
+                    <Form>
+                    <Form.Group controlId="Form.Schedule">
                     <Form.Label>Schedule</Form.Label>
                     <Form.Control as="textarea" rows="3" name="schedule" value={this.state.schedule} onChange={this.handleInputChange}/>
-                </Form.Group>
-                {/* Notes */}
-                <Form.Group controlId="Form.Notes">
+                    </Form.Group>
+                    </Form>
+                    </Col>
+                    <Col>
+                    {/* Notes */}
+                    <Form>
+                    <Form.Group controlId="Form.Notes">
                     <Form.Label>Notes</Form.Label>
                     <Form.Control as="textarea" rows="3" name="notes" value={this.state.notes} onChange={this.handleInputChange}/>
-                </Form.Group>
-                {/* <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button> */}
-                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Add Animal</Button>
-                {/* Uploading image */}
-                <ImageUploader
-                withIcon={true}
-                buttonText='Choose image'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png', '.gif']}
-                maxFileSize={5242880}
-                />
+                    </Form.Group>
+                    </Form>
+                    </Col>
+                </Row>
+                {/* <Row>
                 <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
-            </Form>
-        );
+                </Row> */}
+            </Container>
+        )
     }
 }
 
-export default InputForm;
+export default AnimalInfoPage;
