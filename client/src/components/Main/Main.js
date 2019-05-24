@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import Find from "../Main/Search";
 import ImageHome from "../Main/ImageCard";
+
+// import CardDeck from 'react-bootstrap/CardDeck';
+
 import API from '../../utils/API';
 
 class Main extends Component {
@@ -22,9 +25,11 @@ class Main extends Component {
       <div id="ll" className="container">
         <Find />
         <br />
+       
         {this.state.animalsList.map(animal => {
-          return <ImageHome animal={animal} key={animal._id} />;
+          return  <ImageHome animal={animal} key={animal._id} /> ;
         })}
+        
         {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
       </div>
     )
