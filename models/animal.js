@@ -34,6 +34,10 @@ const animalSchema = new Schema({
         type: Array,
         required: true
     },
+    image: {
+        data: Buffer, 
+        contentType: String
+    },
     medicalRecords: [{
         type: Schema.Types.ObjectId,
         ref: "MedicalRecord"
