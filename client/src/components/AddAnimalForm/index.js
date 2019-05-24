@@ -79,7 +79,8 @@ class InputForm extends Component {
                     <Form.Label>Notes</Form.Label>
                     <Form.Control as="textarea" rows="3" name="notes" value={this.state.notes} onChange={this.handleInputChange}/>
                 </Form.Group>
-                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
+                {/* <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button> */}
+                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Add Animal</Button>
             </Form>
         );
     }

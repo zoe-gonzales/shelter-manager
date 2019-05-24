@@ -13,7 +13,6 @@ function Navigator() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 
       <img
-        // src="/logo.svg"
         src={require('../../images/logo.jpg')}
         width="60"
         height="60"
@@ -27,7 +26,7 @@ function Navigator() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="#link">Link</Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

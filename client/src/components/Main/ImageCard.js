@@ -1,25 +1,24 @@
 import React from "react";
 import "../Main/ImageCard.css"
 import Card from 'react-bootstrap/Card';
-import CardDeck from 'react-bootstrap/CardDeck';
+// import CardDeck from 'react-bootstrap/CardDeck';
 import Button from 'react-bootstrap/Button';
 
 function ImageHome(props) {
   return (
-    <CardDeck>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>{props.animal.name}</Card.Title>
-              <Card.Text>{props.animal.animalType}</Card.Text>
-              <Card.Text>Spayed/Neutered: {props.animal.spayNeuter}</Card.Text>
-              <Card.Text>Notes: {props.animal.notes}</Card.Text>
-              <Card.Text>
-              <Button variant="info" href={"/animal/" + props.animal._id}>More details</Button>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-      </CardDeck>
+      <Card>
+        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Body>
+          <Card.Title>{props.animal.name}</Card.Title>
+          <Card.Text>{props.animal.animalType}</Card.Text>
+          <Card.Text>Spayed/Neutered: {props.animal.spayNeuter}</Card.Text>
+          <Card.Text>Notes: {props.animal.notes}</Card.Text>
+          <Card.Text>
+            <Button variant="info" href={"/animal/" + props.animal._id}>More details</Button>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+
   )
 }
 

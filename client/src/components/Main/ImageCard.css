@@ -1,3 +1,23 @@
 .card-title.h5 {
   text-align: center;
 }
+
+/* space between row */
+.card {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* To align card content in center */
+p{
+  text-align: center;
+}
+
+@media (min-width: 992px) { 
+  .card {
+    width: 30%;
+    float: left;
+    margin-right: 3%;
+  }
+}
+
