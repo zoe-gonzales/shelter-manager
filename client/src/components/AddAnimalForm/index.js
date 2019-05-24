@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import API from '../../utils/API';
+import ImageUploader from 'react-images-upload';
 import './style.css';
 
 class InputForm extends Component {
@@ -12,7 +13,16 @@ class InputForm extends Component {
         spayNeuter: 'No',
         vaccinations: '',
         schedule: '',
-        notes: ''
+        notes: '',
+        picture: ''
+    }
+
+    onDrop = (picture, file) => {
+        console.log(picture)
+        console.log(file);
+        this.setState({
+            picture: file[0]
+        });
     }
 
     handleInputChange = event => {
@@ -29,7 +39,8 @@ class InputForm extends Component {
             spayNeuter: this.state.spayNeuter,
             vaccinations: this.state.vaccinations,
             schedule: this.state.schedule,
-            notes: this.state.notes
+            notes: this.state.notes,
+            image: this.state.picture
         }
         API.createAnimal(animal)
            .then(res => {
@@ -40,7 +51,7 @@ class InputForm extends Component {
 
     render() {
         return (
-            <Form className="input-form">
+            <Form className="input-form" encType="multipart/form-data">
                 {/* Animal Name */}
                 <Form.Group controlId="Form.Name">
                     <Form.Label>Name</Form.Label>
@@ -79,6 +90,14 @@ class InputForm extends Component {
                     <Form.Label>Notes</Form.Label>
                     <Form.Control as="textarea" rows="3" name="notes" value={this.state.notes} onChange={this.handleInputChange}/>
                 </Form.Group>
+                {/* Uploading image */}
+                <ImageUploader
+                withIcon={true}
+                buttonText='Choose image'
+                onChange={this.onDrop}
+                imgExtension={['.jpg', '.gif', '.png', '.gif']}
+                maxFileSize={5242880}
+                />
                 <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
             </Form>
         );
