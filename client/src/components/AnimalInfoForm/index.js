@@ -16,7 +16,7 @@ class AnimalInfoForm extends Component {
         notes: ""
     }
 
-    handleInputChange=e=>{
+    handleInputChange = e => {
         const{name, value} = e.target
         this.setState({[name]:value})
     }
@@ -26,7 +26,7 @@ class AnimalInfoForm extends Component {
             <Container>
                 <Row>
                     <Col>
-                        <img src="../../images/Journey.jpeg"/>
+                        <img src={require('../../images/Journey.jpeg')} height="300" width="300"/>
                     </Col>
                     <Col>
                     <Form className="input-form">
