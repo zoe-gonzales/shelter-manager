@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 // import API from '../../utils/API';
 
-class AnimalInfoForm extends Component {
+class AnimalInfoPage extends Component {
     state = {
         name: "",
         type: "",
@@ -90,12 +90,12 @@ class AnimalInfoForm extends Component {
                     </Form>
                     </Col>
                 </Row>
-                <Row>
+                {/* <Row>
                 <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
-                </Row>
+                </Row> */}
             </Container>
         )
     }
 }
 
-export default AnimalInfoForm;
+export default AnimalInfoPage;
