@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './style.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import API from '../../utils/API';
 
 class MaterialIntakeForm extends Component {
     state = {
@@ -18,7 +19,22 @@ class MaterialIntakeForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        // this is where data from state will be added to db via create method
+        let materialDonation = {
+            item: this.state.item,
+            quantity: this.state.quantity,
+            donor_name: this.state.donor_name,
+            donor_email: this.state.donor_email
+        }
+        API.addMaterial(materialDonation)
+            .then(res => console.log(res))
+            .catch(error => console.log(error));
+
+        this.setState({
+            item: '',
+            quantity: 0,
+            donor_name: '',
+            donor_email: ''
+        });
     }
 
     render() {
