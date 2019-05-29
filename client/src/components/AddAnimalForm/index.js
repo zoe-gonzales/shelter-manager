@@ -5,6 +5,7 @@ import API from '../../utils/API';
 import ImageUploader from 'react-images-upload';
 import './style.css';
 
+
 class InputForm extends Component {
     state = {
         name: '',
