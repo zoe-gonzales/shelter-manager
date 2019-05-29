@@ -2,18 +2,41 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import AnimalDetail from '../AnimalDetail';
 import { Link } from 'react-router-dom';
-// import API from '../../utils/API';
+import API from '../../utils/API';
 
 class AnimalInfoPage extends Component {
     state = {
         name: "",
-        type: "",
+        animalType: "",
         age: "",
+        medicalRecords: [],
         spayNeuter: "",
-        vaccinations: "",
-        schedule: "",
-        notes: ""
+        vaccinations: [],
+        schedule: [],
+        notes: []
+    }
+
+    componentDidMount = () => {
+        API.getAnimalById(this.props.match.params.id)
+        .then( ({data}) => {
+            console.log(data)
+            this.setState ({
+                name: data.name,
+                animalType: data.animalType,
+                age: data.age,
+                medicalRecords: data.medicalRecords,
+                spayNeuter: data.spayNeuter,
+                vaccinations: data.vaccinations,
+                schedule: data.schedule,
+                notes: data.notes
+            })
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+        // console.log("queryParams", this.props.match.params);
     }
 
     handleInputChange = e => {
@@ -22,6 +45,7 @@ class AnimalInfoPage extends Component {
     }
 
     render() {
+        const {name, animalType, age, medicalRecords, spayNeuter, vaccinations, schedule, notes} = this.state
         return(
             <Container>
                 <Row>
@@ -29,36 +53,17 @@ class AnimalInfoPage extends Component {
                         <img src={require('../../images/Journey.jpeg')} height="300" width="300"/>
                     </Col>
                     <Col>
-                    <Form className="input-form">
+                    
                 {/* Animal Name */}
-                <Form.Group controlId="Form.Name">
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" name="name" value={this.state.name} onChange={this.handleInputChange}/>
-                </Form.Group>
+                <p>Name: {name} </p>
                 {/* Animal Type */}
-                <Form.Group controlId="Form.Type">
-                    <Form.Label>Type</Form.Label>
-                    <Form.Control type="text" name="type" value={this.state.type} onChange={this.handleInputChange}/>
-                </Form.Group>
+                <p>Animal Type: {animalType}</p>
                 {/* Animal Age */}
-                <Form.Group controlId="Form.Age">
-                    <Form.Label>Age</Form.Label>
-                    <Form.Control type="text" name="age" value={this.state.age} onChange={this.handleInputChange}/>
-                </Form.Group>
+                <p>Age: {age}</p>
                 {/* Spay/Neuter */}
-                <Form.Group controlId="Form.SpayNeuter">
-                    <Form.Label>Spay/Neuter</Form.Label>
-                    <Form.Control as="select" name="spayNeuter" value={this.state.spayNeuter} onChange={this.handleInputChange}>
-                    <option>Yes</option>
-                    <option>No</option>
-                    </Form.Control>
-                </Form.Group>
+                <p>Spayed/Neutered? {spayNeuter}</p>
                 {/* Vaccinations */}
-                <Form.Group controlId="Form.Vaccinations">
-                    <Form.Label>Vaccinations</Form.Label>
-                    <Form.Control as="textarea" name="vaccinations" rows="3" value={this.state.vaccinations} onChange={this.handleInputChange}/>
-                </Form.Group>
-            </Form>
+                <p>Vaccinations: {vaccinations}</p>
                     </Col>
                     <Col>
                         <Link to="/add/medical">
@@ -90,9 +95,11 @@ class AnimalInfoPage extends Component {
                     </Form>
                     </Col>
                 </Row>
-                {/* <Row>
-                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
-                </Row> */}
+                <Row style={{marginBottom: 50}}>
+                <AnimalDetail {...this.props}/>
+                {/* <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Click for PDF</Button> */}
+                
+                </Row>
             </Container>
         )
     }
