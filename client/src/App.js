@@ -29,7 +29,8 @@ class App extends Component {
         <Route exact path="/"  component={WelcomePage} />
         <Route exact path='/callback' component={Callback}/>
         <Route exact path="/main"  component={Main} />
-        <Route exact path="/animal/:id" component={AnimalDetail}/>
+        {/* <Route exact path="/animal/:id" component={AnimalDetail}/> */}
+        <Route exact path="/animal/:id" component={AnimalInfoPage}/>
         <Route exact path="/add/animal" component={AddAnimalForm}/>
         <Route exact path="/info" component={AnimalInfoPage}/>
         <Route exact path="/add/medical" component={AddMedicalForm}/>
