@@ -2,12 +2,18 @@ import auth0 from 'auth0-js';
 
 class Auth {
   constructor() {
+    let redirectUri = "http://localhost:3000/callback";
+
+    if (process.env.NODE_ENV === "production") {
+      redirectUri = 'https://journey-shelter-manager.herokuapp.com/callback';
+    } 
+
     this.auth0 = new auth0.WebAuth({
       // the following three lines MUST be updated
       domain: 'frosty-sound-0383.auth0.com',
       audience: 'https://frosty-sound-0383.auth0.com/userinfo',
       clientID: 'prRcaY3zwW4nogG4XPC9jzi8vNZEYpDc',
-      redirectUri: 'http://localhost:3000/callback',
+      redirectUri,
       responseType: 'id_token',
       scope: 'openid profile'
     });
