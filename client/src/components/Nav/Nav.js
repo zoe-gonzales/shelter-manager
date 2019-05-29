@@ -30,7 +30,7 @@ function Navigator() {
           <Nav.Link href="/add/animal">Add Animal</Nav.Link>
           <NavDropdown title="Donation" id="basic-nav-dropdown">
             <NavDropdown.Item href="/donate/material">Material Donations</NavDropdown.Item>
-            <NavDropdown.Item href="/donate/money">Monetary donations</NavDropdown.Item>
+            <NavDropdown.Item href="/donate/money">Monetary Donations</NavDropdown.Item>
             {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
             {/* <NavDropdown.Divider /> */}
             {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
