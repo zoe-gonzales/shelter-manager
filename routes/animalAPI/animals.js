@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const animalController = require("../../controller/controller");
+const animalController = require("../../controller/animalController");
 
 // Matches with "/api/animals"
 router.route("/")

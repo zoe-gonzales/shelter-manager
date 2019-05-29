@@ -15,5 +15,17 @@ export default {
     },
     getPDF: function(id) {
         return axios.get("/api/animals/pdf/" + id);
+    },
+    getMaterialDonations: function() {
+        return axios.get("/api/donations/material");
+    },
+    addMaterial: function(data) {
+        return axios.post("/api/donations/material", data);
+    },
+    getMonetaryDonations: function() {
+        return axios.get("/api/donations/monetary");
+    },
+    addMonetary: function(data) {
+        return axios.post("/api/donations/monetary", data);
     }
 }
