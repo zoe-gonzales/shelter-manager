@@ -47,6 +47,17 @@ class InputForm extends Component {
                 console.log(res)
            })
            .catch(error => console.log(error));
+
+        this.setState({
+            name: '',
+            age: '',
+            type: '',
+            spayNeuter: 'No',
+            vaccinations: '',
+            schedule: '',
+            notes: '',
+            picture: ''
+        });
     }
 
     render() {
@@ -90,8 +101,6 @@ class InputForm extends Component {
                     <Form.Label>Notes</Form.Label>
                     <Form.Control as="textarea" rows="3" name="notes" value={this.state.notes} onChange={this.handleInputChange}/>
                 </Form.Group>
-                {/* <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button> */}
-                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Add Animal</Button>
                 {/* Uploading image */}
                 <ImageUploader
                 withIcon={true}
@@ -100,7 +109,8 @@ class InputForm extends Component {
                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                 maxFileSize={5242880}
                 />
-                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
+                <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Add Animal</Button>
+
             </Form>
         );
     }
