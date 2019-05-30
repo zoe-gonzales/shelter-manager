@@ -14,8 +14,8 @@ import WelcomePage from './components/WelcomePage/WelcomePage';
 import Callback from './components/Callback/Callback';
 import MaterialDonationForm from './components/MaterialDonationForm';
 import MoneyDonationForm from './components/MoneyDonationForm';
-import AnimalDetail from './components/AnimalDetail';
 import AnimalInfoPage from './components/AnimalInfoPage';
+import DonationsView from './components/DonationsView';
 
 class App extends Component {
   render() {
@@ -29,13 +29,13 @@ class App extends Component {
         <Route exact path="/"  component={WelcomePage} />
         <Route exact path='/callback' component={Callback}/>
         <Route exact path="/main"  component={Main} />
-        {/* <Route exact path="/animal/:id" component={AnimalDetail}/> */}
         <Route exact path="/animal/:id" component={AnimalInfoPage}/>
         <Route exact path="/add/animal" component={AddAnimalForm}/>
         <Route exact path="/info" component={AnimalInfoPage}/>
         <Route exact path="/add/medical" component={AddMedicalForm}/>
         <Route exact path="/donate/material" component={MaterialDonationForm}/>
         <Route exact path="/donate/money" component={MoneyDonationForm}/>
+        <Route exact path="/donations" component={DonationsView}/>
         </Switch>
 
       <Footer/>
