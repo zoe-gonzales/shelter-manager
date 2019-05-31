@@ -24,9 +24,11 @@ class Main extends Component {
           let type = animal.animalType;
           switch(type) {
             case "cat":
+            case "Cat":
               image = "./images/cat.jpg";
             break;
             case "dog":
+            case "Dog":
               image = "./images/dog.jpg";
             break;
             default:
