@@ -3,5 +3,5 @@
 }
 
 .form-control {
-    padding: 0;
+    height: calc(92% - 85px);
 }
