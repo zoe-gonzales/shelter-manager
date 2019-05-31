@@ -17,4 +17,9 @@ router
   .route("/pdf/:id")
   .get(animalController.makePDF);
 
+// Matches with "/api/animals/medicalRecord/:id"
+router
+  .route("/animalMedical/:id")
+  .post(animalController.animalMedical);
+
 module.exports = router;

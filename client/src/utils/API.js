@@ -27,5 +27,8 @@ export default {
     },
     addMonetary: function(data) {
         return axios.post("/api/donations/monetary", data);
+    },
+    addMedicalRecord: function(id, data) {
+        return axios.post("/api/animals/medicalRecord/" + id, data);
     }
 }
