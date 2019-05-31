@@ -1,13 +1,12 @@
 import React from "react";
 import "../Main/ImageCard.css"
 import Card from 'react-bootstrap/Card';
-// import CardDeck from 'react-bootstrap/CardDeck';
 import Button from 'react-bootstrap/Button';
 
 function ImageHome(props) {
   return (
       <Card>
-        <Card.Img variant="top" src="holder.js/100px160" />
+        <Card.Img variant="top" src={props.src} />
         <Card.Body>
           <Card.Title>{props.animal.name}</Card.Title>
           <Card.Text>{props.animal.animalType}</Card.Text>
@@ -18,7 +17,6 @@ function ImageHome(props) {
           </Card.Text>
         </Card.Body>
       </Card>
-
   )
 }
 

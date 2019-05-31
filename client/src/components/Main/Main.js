@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import Find from "../Main/Search";
 import ImageHome from "../Main/ImageCard";
-
-// import CardDeck from 'react-bootstrap/CardDeck';
-
 import API from '../../utils/API';
 
 class Main extends Component {
@@ -13,10 +10,7 @@ class Main extends Component {
 
   componentDidMount() {
     API.getAllAnimals()
-       .then(res => {
-         console.log(res.data);
-         this.setState({ animalsList: res.data });
-       })
+       .then(res => { this.setState({ animalsList: res.data }) })
        .catch(error => console.log(error));
   }
 
@@ -25,12 +19,24 @@ class Main extends Component {
       <div id="ll" className="container">
         <Find />
         <br />
-       
         {this.state.animalsList.map(animal => {
-          return  <ImageHome animal={animal} key={animal._id} /> ;
+          let image;
+          let type = animal.animalType;
+          switch(type) {
+            case "cat":
+            case "Cat":
+              image = "./images/cat.jpg";
+            break;
+            case "dog":
+            case "Dog":
+              image = "./images/dog.jpg";
+            break;
+            default:
+              image = "./images/misc.jpg";
+            break;
+          }
+          return  <ImageHome animal={animal} key={animal._id} src={image}/> ;
         })}
-        
-        {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
       </div>
     )
   }
