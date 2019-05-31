@@ -5,19 +5,43 @@ import API from '../../utils/API';
 
 class Main extends Component {
   state = {
-    animalsList: []
+    animalsList: [],
+    searchTerm: ''
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
+    this.getAllAnimals();
+  }
+
+  getAllAnimals = () => {
     API.getAllAnimals()
        .then(res => { this.setState({ animalsList: res.data }) })
        .catch(error => console.log(error));
   }
 
+  handleInputChange = e => {
+    let { name, value } = e.target;
+    this.setState({ [name]: value }, () => {
+      if (this.state.searchTerm === '') {
+        this.getAllAnimals();
+      }
+    });
+    
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.state.animalsList.filter(animal => {
+      if (animal.name === this.state.searchTerm) {
+        this.setState({ animalsList: [animal] });
+      }
+    });
+  }
+
   render() {
     return (
       <div id="ll" className="container">
-        <Find />
+        <Find value={this.state.searchTerm} onChange={e => this.handleInputChange(e)} onClick={this.handleSubmit}/>
         <br />
         {this.state.animalsList.map(animal => {
           let image;
