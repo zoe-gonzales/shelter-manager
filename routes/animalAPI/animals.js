@@ -19,7 +19,7 @@ router
 
 // Matches with "/api/animals/medicalRecord/:id"
 router
-  .route("/animalMedical/:id")
+  .route("/medicalRecord/:id")
   .post(animalController.animalMedical);
 
 module.exports = router;

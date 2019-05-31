@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import API from '../../utils/API';
+import { Link } from 'react-router-dom';
 import './style.css';
 
 class InputForm extends Component {
     state = {
         record: '',
         date: '',
-        type: '',
+        type: 'Medication',
         recordDetails: '',
         animalId: ''
+    }
+
+    componentDidMount = () => {
+        this.setState({ animalId: this.props.match.params.id });
     }
 
     handleInputChange = event => {
@@ -19,7 +25,23 @@ class InputForm extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        let newRecord = {
+            record: this.state.record,
+            date: this.state.date,
+            type: this.state.type,
+            recordDetails: this.state.recordDetails
+        }
         // medical record added to db via animal's _id
+        API.addMedicalRecord(this.state.animalId, newRecord)
+           .then(res => console.log(res))
+           .catch(error => console.log(error));
+
+        this.setState({
+            record: '',
+            date: '',
+            type: 'Medication',
+            recordDetails: ''
+        });
     }
 
     render() {
@@ -51,6 +73,7 @@ class InputForm extends Component {
                     <Form.Control as="textarea" rows="3" name="recordDetails" value={this.state.recordDetails} onChange={this.handleInputChange}/>
                 </Form.Group>
                 <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Submit</Button>
+                <Link className="btn" variant="info" to={"/animal/" + this.state.animalId}>Back to Animal Page</Link>
             </Form>
         );
     }
