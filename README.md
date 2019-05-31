@@ -12,7 +12,6 @@ As an intake person at a busy shelter, I want to be able to easily and efficient
 
 As a user I would be able to log in to the system, to see the shelter animals’ details
 
-
 ### Technologies Used:
 <ul>
 <li>React</li>
@@ -22,6 +21,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 <li>AuthO</li>
 <li>pdfkit npm package</li>
 <li>React Bootstrap</li>
+<li>Bootswatch</li>
 </ul>
 
 ### Deployed at: 
