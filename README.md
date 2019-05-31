@@ -30,7 +30,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 ## Team Member Roles:
 <ul>
 <li>Lynn - UI Master(Frontend)</li>
-<li>Bindhu - CSS Master(Frontend)</li>
+<li>Bindhu - Lead Frontend Designer</li>
 <li>Sara - Director of Organization (Backend)</li>
 <li>Zoe - Senior (Backend - Routes)</li>
 <li>Sarah - Scrum Master/Project Manager (Backend - Front End if needed)</li>
