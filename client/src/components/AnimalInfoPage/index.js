@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 import AnimalDetail from '../AnimalDetail';
 import { Link } from 'react-router-dom';
 import API from '../../utils/API';
