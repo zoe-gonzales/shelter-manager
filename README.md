@@ -42,7 +42,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 
 
-BEST BURGER APP
+
 
 ## About This Boilerplate
 
