@@ -14,6 +14,7 @@ module.exports = {
     findById: function(req, res) {
         db.Animal
         .findById({ _id: req.params.id })
+        .populate("medicalRecords")
         .then(animalData => res.json(animalData))
         .catch(error => console.log(error));
     },
@@ -85,5 +86,16 @@ module.exports = {
             res.send(doc);             
         })
         .catch(error => console.log(error));
-    }
+    },
+    // Animal Medical Record
+    animalMedical: function(req, res) {
+        db.medicalRecord.create(req.body)
+        .then(medicalData => {
+        return db.Animal
+        .findOneAndUpdate({_id:req.params.id}, 
+        {$push: {medicalRecords:medicalData._id}}, 
+        {new:true});  
+        })
+
+    },
 }
