@@ -43,7 +43,22 @@ module.exports = {
             // directs where to save final PDF
             doc.pipe(fs.createWriteStream('client/public/pdf/animal.pdf'));
             // PDF content
-            doc.image('images/grumpy.jpeg', 60, 60,
+            let image;
+            let type = animalData.animalType;
+            switch(type) {
+                case 'cat':
+                case 'Cat':
+                    image = 'images/cat.jpg';
+                break;
+                case 'dog':
+                case 'Dog':
+                    image = 'images/dog.jpg';
+                break;
+                default: 
+                    image = 'images/misc.jpg';
+                break;
+            }
+            doc.image(image, 60, 60,
             {
                 fit: [240, 240], 
                 align: 'center', 
