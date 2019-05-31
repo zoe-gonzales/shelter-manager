@@ -1,13 +1,15 @@
 import React from "react";
 import "../Nav/Nav.css"
-// import Nav from 'react-bootstrap/Nav'
-// import Navbar from 'react-bootstrap/Navbar'
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import {Link, withRouter} from 'react-router-dom';
+import auth0Client from '../../Auth';
 
 
-// export default Nav;
-
-function Navigator() {
+function Navigator(props) {
+  const signOut = () => {
+    auth0Client.signOut();
+    props.history.replace('/');
+  };
   return (
 
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -20,7 +22,7 @@ function Navigator() {
         alt="React Bootstrap logo"
       />
 
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/main">
         {/* Journey's Shelter Management Application */}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,19 +33,27 @@ function Navigator() {
           <NavDropdown title="Donation" id="basic-nav-dropdown">
             <NavDropdown.Item href="/donate/material">Material Donations</NavDropdown.Item>
             <NavDropdown.Item href="/donate/money">Monetary Donations</NavDropdown.Item>
-            {/* <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
-            {/* <NavDropdown.Divider /> */}
-            {/* <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item> */}
           </NavDropdown>
         </Nav>
-        <Form inline>
+          {
+            !auth0Client.isAuthenticated() &&
+            <button className="btn btn-dark" onClick={auth0Client.signIn}>Sign In</button>
+          }
+          {
+            auth0Client.isAuthenticated() &&
+            <div>
+              <label className="mr-2 text-white">{auth0Client.getProfile().name}</label>
+              <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out</button>
+            </div>
+          }
+        {/* <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
-        </Form>
+        </Form> */}
       </Navbar.Collapse>
       </Navbar>
   );
 
 }
 
-export default Navigator;
+export default withRouter(Navigator);
