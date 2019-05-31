@@ -1,19 +1,19 @@
 # JOURNEY'S SHELTER MANAGEMENT APPLICATION
 
-## Overview:
+### Overview:
 
 Our intended application offers management for shelters via animal and donation
 databases. Our product is valuable due to a strong and personable UI, and
 donation management feature, which competitors do not have.
 
-## User Stories:
+### User Stories:
 
 As an intake person at a busy shelter, I want to be able to easily and efficiently input new animals into the system or update the system so that animal can be tracked through the intake process, and so, easily update the system when the animal gets adopted.
 
 As a user I would be able to log in to the system, to see the shelter animals’ details
 
 
-## Technologies Used:
+### Technologies Used:
 <ul>
 <li>React</li>
 <li>Mongoose</li>
@@ -24,10 +24,10 @@ As a user I would be able to log in to the system, to see the shelter animals’
 <li>React Bootstrap</li>
 </ul>
 
-## Deployed at: 
+### Deployed at: 
 [Journey App](https://journey-shelter-manager.herokuapp.com/)
 
-## Team Member Roles:
+### Team Member Roles:
 <ul>
 <li>Lynn - UI Master(Frontend)</li>
 <li>Bindhu - Lead Frontend Designer</li>
