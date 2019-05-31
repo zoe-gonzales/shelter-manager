@@ -5,12 +5,16 @@ import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
 
 
-function Find() {
+function Find({ 
+  searchTerm, 
+  onChange,
+  onClick
+ }) {
 
   return (
     <Form inline>
-      <FormControl size="lg" type="text" placeholder="Search for animal" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
+      <FormControl size="lg" type="text" placeholder="Search for animal" className="mr-sm-2" name="searchTerm" value={searchTerm} onChange={onChange}/>
+      <Button variant="outline-success" type="submit" onClick={onClick}>Search</Button>
     </Form>
   )
 }
