@@ -30,7 +30,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 ## Team Member Roles:
 <ul>
 <li>Lynn - UI Master(Frontend)</li>
-<li>Bindhu - CSS Master(Frontend)</li>
+<li>Bindhu - Lead Frontend Designer</li>
 <li>Sara - Director of Organization (Backend)</li>
 <li>Zoe - Senior (Backend - Routes)</li>
 <li>Sarah - Scrum Master/Project Manager (Backend - Front End if needed)</li>
@@ -57,14 +57,10 @@ npm install
 
 This should install node modules within the server and the client folder.
 
-After both installations complete, run the following command in your terminal:
+After both installations are complete, run the following command in your terminal:
 
 ```
 npm start
 ```
 
 Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.

@@ -1,3 +1,7 @@
 .input-form {
     margin: 2rem;
 }
+
+.form-control {
+    height: calc(92% - 85px);
+}
