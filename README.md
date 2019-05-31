@@ -22,10 +22,13 @@ As a user I would be able to log in to the system, to see the shelter animals’
 <li>AuthO</li>
 <li>pdfkit npm package</li>
 <li>React Bootstrap</li>
+<li>Bootswatch</li>
 </ul>
 
 ### Deployed at: 
+```
 [Journey App](https://journey-shelter-manager.herokuapp.com/)
+```
 
 ### Team Member Roles:
 <ul>
