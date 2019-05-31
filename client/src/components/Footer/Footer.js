@@ -6,7 +6,7 @@ function Footer() {
   return (
     <footer id="footer" className="fixed-bottom mt-10 ">
 
-      About Journey's Shelter Management Application
+      Journey's Shelter Management Application
 
   </footer>
   )
