@@ -33,6 +33,7 @@ function Navigator(props) {
           <NavDropdown title="Donation" id="basic-nav-dropdown">
             <NavDropdown.Item href="/donate/material">Material Donations</NavDropdown.Item>
             <NavDropdown.Item href="/donate/money">Monetary Donations</NavDropdown.Item>
+            <NavDropdown.Item href="/donations">View Donations</NavDropdown.Item>
           </NavDropdown>
         </Nav>
           {
