@@ -5,7 +5,7 @@ import API from '../../utils/API';
 import { Link } from 'react-router-dom';
 import './style.css';
 
-class InputForm extends Component {
+class MedicalInputForm extends Component {
     state = {
         record: '',
         date: '',
@@ -79,4 +79,4 @@ class InputForm extends Component {
     }
 }
 
-export default InputForm;
+export default MedicalInputForm;
