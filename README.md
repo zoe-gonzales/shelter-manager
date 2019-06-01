@@ -20,6 +20,21 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 ![Sign Up/Log In](client/src/images/SignLogin.png)
 
+
+
+### Home Page
+
+
+![Home](client/src/images/Home.PNG)
+
+
+### Add Animal Page
+
+
+![Home](client/src/images/AddAnimal.png)
+
+
+
 ### Technologies Used:
 <ul>
 <li>React</li>
