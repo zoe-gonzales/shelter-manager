@@ -12,6 +12,14 @@ As an intake person at a busy shelter, I want to be able to easily and efficient
 
 As a user I would be able to log in to the system, to see the shelter animals’ details
 
+
+### Sign Up/Log In
+
+
+![Sign Up/Log In](public/src/images/Sign_Login.png)
+
+
+
 ### Technologies Used:
 <ul>
 <li>React</li>
