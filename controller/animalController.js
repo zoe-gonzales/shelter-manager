@@ -1,8 +1,6 @@
 const db = require("../models");
 const PDFDocument = require('pdfkit');
 const fs = require('fs');
-const mongoose = require("mongoose");
-const binData = mongoose.mongo.Binary;
 const moment = require('moment');
 
 module.exports = {
@@ -23,10 +21,6 @@ module.exports = {
     },
     // Adds animal
     add: function(req, res) {
-        // const data = fs.readFileSync(req.body.image);
-        // db.Animal.image.data = binData(data);
-        // db.Animal.image.contentType = 'image/jpg';
-        
         db.Animal
           .create(req.body)
           .then(result => res.json(result))
@@ -46,7 +40,6 @@ module.exports = {
         .findById({ _id: req.params.id })
         .populate("medicalRecords")
         .then(animalData => {
-            console.log(animalData)
             // generate new PDF using animal data
             const doc = new PDFDocument();
             // directs where to save final PDF
@@ -91,7 +84,9 @@ module.exports = {
                 Shelter schedule: ${animalData.schedule.join(', ').toString()}\n
                 Additional notes: ${animalData.notes.join(', ').toString()}`,
                 15, 315,
-                { align: 'left' });
+                {
+                    align: 'left'
+                });
 
             doc.font('Times-Roman')
             .fontSize(14)
@@ -113,9 +108,9 @@ module.exports = {
         db.MedicalRecord.create(req.body)
         .then(medicalData => {
             return db.Animal
-        .findOneAndUpdate({_id:req.params.id}, 
-            {$push: {medicalRecords: medicalData._id}}, 
-            {new:true});  
-        })
+        .findOneAndUpdate({ _id: req.params.id }, 
+            { $push: { medicalRecords: medicalData._id } }, 
+            { new: true });  
+        });
     }
 }
