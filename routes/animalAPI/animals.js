@@ -1,25 +1,25 @@
-const router = require("express").Router();
-const animalController = require("../../controller/animalController");
+const router = require('express').Router();
+const animalController = require('../../controller/animalController');
 
 // Matches with "/api/animals"
-router.route("/")
+router.route('/')
   .get(animalController.findAll)
   .post(animalController.add);
 
 // Matches with "/api/animals/:id"
 router
-  .route("/:id")
+  .route('/:id')
   .get(animalController.findById)
   .put(animalController.update);
 
 // Matches with "/api/animals/pdf/:id"
 router
-  .route("/pdf/:id")
+  .route('/pdf/:id')
   .get(animalController.makePDF);
 
 // Matches with "/api/animals/medicalRecord/:id"
 router
-  .route("/medicalRecord/:id")
+  .route('/medicalRecord/:id')
   .post(animalController.animalMedical);
 
 module.exports = router;
