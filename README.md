@@ -22,6 +22,15 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 
 
+### Home Page
+
+
+
+![Home Page](client/src/images/Home.PNG)
+
+
+
+
 ### Add Animal Page
 
 
