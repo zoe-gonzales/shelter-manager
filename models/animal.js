@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const animalSchema = new Schema({
@@ -34,14 +34,14 @@ const animalSchema = new Schema({
         required: true
     },
     image: {
-        data: Buffer, 
+        data: Buffer,
         contentType: String
     },
     medicalRecords: [{
         type: Schema.Types.ObjectId,
-        ref: "MedicalRecord"
+        ref: 'MedicalRecord'
     }]
 });
 
-const Animal = mongoose.model("Animal", animalSchema);
+const Animal = mongoose.model('Animal', animalSchema);
 module.exports = Animal;

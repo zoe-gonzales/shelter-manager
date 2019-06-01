@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const materialSchema = new Schema({
@@ -12,5 +12,5 @@ const materialSchema = new Schema({
     }
 });
 
-const MaterialDonation = mongoose.model("MaterialDonation", materialSchema);
+const MaterialDonation = mongoose.model('MaterialDonation', materialSchema);
 module.exports = MaterialDonation;
