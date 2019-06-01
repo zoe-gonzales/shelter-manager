@@ -17,9 +17,6 @@ const WelcomePage = () => {
     <SignInButton />
     <br/>
     <div style={divStyle}></div>
-    
-
-      {/* <h1>This is the main page after sign-in or sign-up(Animal Page)</h1> */}
     </div>
   )
 }

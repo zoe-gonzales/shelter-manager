@@ -1,5 +1,4 @@
 import React from "react";
-import "../Nav/Nav.css"
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import {Link, withRouter} from 'react-router-dom';
 import auth0Client from '../../Auth';
@@ -47,10 +46,6 @@ function Navigator(props) {
               <button className="btn btn-dark" onClick={() => {signOut()}}>Sign Out</button>
             </div>
           }
-        {/* <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-success">Search</Button>
-        </Form> */}
       </Navbar.Collapse>
       </Navbar>
   );
