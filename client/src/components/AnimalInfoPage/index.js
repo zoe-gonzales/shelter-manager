@@ -41,7 +41,6 @@ class AnimalInfoPage extends Component {
         .catch((error) => {
             console.log(error);
         })
-        // console.log("queryParams", this.props.match.params);
     }
 
     handleInputChange = e => {

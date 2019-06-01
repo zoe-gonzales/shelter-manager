@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import logo from "./logo.svg";
-// import "./App.css";
-// import LogIn from "./components/LogIn/LogIn";
-// import SignUp from "./components/SignUp/SignUp";
-import Main from "./components/Main/Main";// Landing Page is Animal Page
+import Main from "./components/Main/Main";
 import AddAnimalForm from './components/AddAnimalForm';
 import AddMedicalForm from './components/AddMedicalForm';
 import Navigator from './components/Nav/Nav';
