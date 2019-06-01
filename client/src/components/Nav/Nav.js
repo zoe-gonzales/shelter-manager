@@ -1,5 +1,4 @@
 import React from "react";
-import "../Nav/Nav.css"
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
 import {Link, withRouter} from 'react-router-dom';
 import auth0Client from '../../Auth';
