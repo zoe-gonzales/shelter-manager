@@ -8,32 +8,38 @@ donation management feature, which competitors do not have.
 
 ### User Stories:
 
-As an intake person at a busy shelter, I want to be able to easily and efficiently input new animals into the system or update the system so that animal can be tracked through the intake process, and so, easily update the system when the animal gets adopted.
+As an intake person at a busy shelter, I want to be able to easily and efficiently input new animals into the system or update the system so that animal can be tracked through the intake process, and easily update the system when animals gets adopted.
 
-As a user I would be able to log in to the system, to see the shelter animals’ details
+As a user I would be able to log in to the system to see the shelter animals’ details.
 
 ### Deployed at: 
 [Journey App](https://journey-shelter-manager.herokuapp.com/)
 
+### Using the Application:
 
-### Sign Up/Log In
+#### Sign Up/Log In
+
+Users can sign up or sign in via AuthO from the welcome page:
 
 ![Sign Up/Log In](client/src/images/SignLogin.png)
 
+#### Home Page
 
-
-### Home Page
-
+Users are then presented with cards of currenet shelter residents. Users can also search by animal if desired.
 
 ![Home](client/src/images/Home.PNG)
 
+#### Add Animal Page
 
-### Add Animal Page
-
+Users can add new animals to the database:
 
 ![Home](client/src/images/AddAnimal.png)
 
+Added animals will then show up in a card on the main page.
 
+#### Donations
+
+Clicking on the Donation tab in the upper navbar opens a dropdown menu. Users may then select to use the material donation form to add donated supplies, the monetary donation form to add donated funds, or to view the shelter's current donations.
 
 ### Technologies Used:
 <ul>
