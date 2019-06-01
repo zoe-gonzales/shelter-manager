@@ -32,7 +32,7 @@ class App extends Component {
         <Route exact path="/main"  component={Main} />
         <Route exact path="/animal/:id" component={AnimalInfoPage}/>
         <Route exact path="/add/animal" component={AddAnimalForm}/>
-        <Route exact path="/add/medical" component={AddMedicalForm}/>
+        <Route exact path="/add/medical/:id" component={AddMedicalForm}/>
         <Route exact path="/donate/material" component={MaterialDonationForm}/>
         <Route exact path="/donate/money" component={MoneyDonationForm}/>
         <Route exact path="/donations" component={DonationsView}/>

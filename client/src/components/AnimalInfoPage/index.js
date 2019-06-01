@@ -3,10 +3,13 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form';
 import AnimalDetail from '../AnimalDetail';
 import { Link } from 'react-router-dom';
+import Table from 'react-bootstrap/Table';
 import API from '../../utils/API';
+import moment from 'moment';
 
 class AnimalInfoPage extends Component {
     state = {
+        _id: "",
         name: "",
         animalType: "",
         age: "",
@@ -14,14 +17,15 @@ class AnimalInfoPage extends Component {
         spayNeuter: "",
         vaccinations: [],
         schedule: [],
-        notes: []
+        notes: [],
+        imageSrc: ""
     }
 
     componentDidMount = () => {
         API.getAnimalById(this.props.match.params.id)
         .then( ({data}) => {
-            console.log(data)
             this.setState ({
+                _id: data._id,
                 name: data.name,
                 animalType: data.animalType,
                 age: data.age,
@@ -30,6 +34,8 @@ class AnimalInfoPage extends Component {
                 vaccinations: data.vaccinations,
                 schedule: data.schedule,
                 notes: data.notes
+            }, () => {
+                this.getImageSrc(this.state.animalType);
             })
         })
         .catch((error) => {
@@ -43,13 +49,32 @@ class AnimalInfoPage extends Component {
         this.setState({[name]:value})
     }
 
+    getImageSrc = animalType => {
+        let image;
+        let type = animalType;
+        switch(type) {
+            case "cat":
+            case "Cat":
+            image = "/images/cat.jpg";
+            break;
+            case "dog":
+            case "Dog":
+            image = "/images/dog.jpg";
+            break;
+            default:
+            image = "/images/misc.jpg";
+            break;
+        }
+        this.setState({ imageSrc: image });
+    }
+
     render() {
-        const {name, animalType, age, medicalRecords, spayNeuter, vaccinations, schedule, notes} = this.state
+        const {_id, name, animalType, age, medicalRecords, spayNeuter, vaccinations, schedule, notes} = this.state
         return(
             <Container>
                 <Row>
                     <Col>
-                        <img src={require('../../images/Journey.jpeg')} height="300" width="300"/>
+                        <img src={this.state.imageSrc} height="300" width="300"/>
                     </Col>
                     <Col>
                     
@@ -65,8 +90,8 @@ class AnimalInfoPage extends Component {
                 <p>Vaccinations: {vaccinations}</p>
                     </Col>
                     <Col>
-                        <Link to="/add/medical">
-                            Medical Records
+                        <Link to={"/add/medical/" + _id}>
+                            Add Medical Record
                         </Link>
                         <br/><br/>
                         <Link to="/main">
@@ -94,10 +119,37 @@ class AnimalInfoPage extends Component {
                     </Form>
                     </Col>
                 </Row>
-                <Row style={{marginBottom: 50}}>
-                <AnimalDetail {...this.props}/>
-                {/* <Button className="btn" variant="info" type="submit" onClick={this.handleSubmit}>Click for PDF</Button> */}
                 
+                <Row>
+                    <p>Medical Records</p>
+                </Row>
+                
+                <Row>
+                    <Table responsive>
+                    <thead>
+                        <tr>
+                        <th>Record</th>
+                        <th>Type</th>
+                        <th>Details</th>
+                        <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            {this.state.medicalRecords.map(record => {
+                                return (
+                                    <tr key={record._id}>
+                                        <td>{record.record}</td>
+                                        <td>{record.type}</td>
+                                        <td>{record.recordDetails}</td>
+                                        <td>{moment(record.date).format('MMM DD, YYYY')}</td>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </Table>
+                </Row>
+                <Row style={{marginBottom: 50}}>
+                <AnimalDetail {...this.props}/>                
                 </Row>
             </Container>
         )

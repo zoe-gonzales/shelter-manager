@@ -3,14 +3,17 @@ const PDFDocument = require('pdfkit');
 const fs = require('fs');
 const mongoose = require("mongoose");
 const binData = mongoose.mongo.Binary;
+const moment = require('moment');
 
 module.exports = {
+    // Retrieves basic data for all animals
     findAll: function(req, res) {
         db.Animal
           .find(req.query)
           .then(animalData => res.json(animalData))
           .catch(error => console.log(error));
     },
+    // Retrieves basic data + medical records for one animal
     findById: function(req, res) {
         db.Animal
         .findById({ _id: req.params.id })
@@ -18,6 +21,7 @@ module.exports = {
         .then(animalData => res.json(animalData))
         .catch(error => console.log(error));
     },
+    // Adds animal
     add: function(req, res) {
         // const data = fs.readFileSync(req.body.image);
         // db.Animal.image.data = binData(data);
@@ -28,17 +32,21 @@ module.exports = {
           .then(result => res.json(result))
           .catch(error => console.log(error));
     },
+    // Updates animal's data
     update: function(req, res) {
         db.Animal
           .updateOne({ _id: req.params.id }, { $set: req.body })
           .then(result => res.json(result))
           .catch(error => console.log(error));
     },
+    // Generates PDF with animal's data
     makePDF: function(req, res) {
         // Retrieve specific animal's data
         db.Animal
         .findById({ _id: req.params.id })
+        .populate("medicalRecords")
         .then(animalData => {
+            console.log(animalData)
             // generate new PDF using animal data
             const doc = new PDFDocument();
             // directs where to save final PDF
@@ -67,6 +75,12 @@ module.exports = {
             });
             // adding space between image and text
             doc.moveDown(18);
+
+            let list = '';
+            animalData.medicalRecords.map(record => {
+                list += `${record.record} - ${record.type} - ${moment(record.date).format('MMM DD, YYYY')} - ${record.recordDetails}\n`
+            });
+
             doc.font('Times-Roman')
                .fontSize(14)
                .text(`
@@ -74,12 +88,19 @@ module.exports = {
                 Approximate age: ${animalData.age}\n
                 Spayed/Neutered: ${animalData.spayNeuter}\n
                 Vaccinations: ${animalData.vaccinations.join(', ').toString()}\n
-                Medical Records: ${animalData.medicalRecords.join(', ').toString()}\n
                 Shelter schedule: ${animalData.schedule.join(', ').toString()}\n
                 Additional notes: ${animalData.notes.join(', ').toString()}`,
                 15, 315,
                 { align: 'left' });
 
+            doc.font('Times-Roman')
+            .fontSize(14)
+            .text(`Medical Records:\n ${list}\n`, 
+                70, 530,
+                {
+                    align: 'left'
+                }
+            );
             // marks PDF as complete
             doc.end();
             // sends to client
@@ -89,13 +110,12 @@ module.exports = {
     },
     // Animal Medical Record
     animalMedical: function(req, res) {
-        db.medicalRecord.create(req.body)
+        db.MedicalRecord.create(req.body)
         .then(medicalData => {
-        return db.Animal
+            return db.Animal
         .findOneAndUpdate({_id:req.params.id}, 
-        {$push: {medicalRecords:medicalData._id}}, 
-        {new:true});  
+            {$push: {medicalRecords: medicalData._id}}, 
+            {new:true});  
         })
-
-    },
+    }
 }

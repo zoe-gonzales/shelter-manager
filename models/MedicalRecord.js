@@ -7,7 +7,7 @@ const medicalSchema = new Schema({
         required: true
     },
     date: {
-        type: date,
+        type: Date,
         required: true
     },
     type: {
@@ -20,5 +20,5 @@ const medicalSchema = new Schema({
     },
 });
 
-const Medical = mongoose.model("Medical", animalSchema);
+const Medical = mongoose.model("MedicalRecord", medicalSchema);
 module.exports = Medical;
