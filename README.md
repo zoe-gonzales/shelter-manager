@@ -22,6 +22,12 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 
 
+### Add Animal Page
+
+
+
+![Sign Up/Log In](client/src/images/AddAnimal.png)
+
 
 ### Technologies Used:
 <ul>
