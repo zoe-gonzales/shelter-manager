@@ -13,6 +13,11 @@ As an intake person at a busy shelter, I want to be able to easily and efficient
 As a user I would be able to log in to the system, to see the shelter animals’ details
 
 
+
+### Deployed at: 
+[Journey App](https://journey-shelter-manager.herokuapp.com/)
+
+
 ### Sign Up/Log In
 
 
@@ -50,8 +55,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 <li>Bootswatch</li>
 </ul>
 
-### Deployed at: 
-[Journey App](https://journey-shelter-manager.herokuapp.com/)
+
 
 ### Team Member Roles:
 <ul>
