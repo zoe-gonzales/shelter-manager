@@ -23,8 +23,7 @@ const animalSchema = new Schema({
         required: true
     },
     recordsLink: {
-        type: String,
-        // required: true
+        type: String
     },
     schedule: {
         type: Array,
