@@ -17,7 +17,7 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 
 
-![Sign Up/Log In](client/public/src/images/Sign_Login.png)
+![Sign Up/Log In](client/public/src/images/SignLogin.png)
 
 
 
