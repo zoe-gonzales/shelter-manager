@@ -12,36 +12,13 @@ As an intake person at a busy shelter, I want to be able to easily and efficient
 
 As a user I would be able to log in to the system, to see the shelter animals’ details
 
-
-
 ### Deployed at: 
 [Journey App](https://journey-shelter-manager.herokuapp.com/)
 
 
 ### Sign Up/Log In
 
-
-
 ![Sign Up/Log In](client/src/images/SignLogin.png)
-
-
-
-
-### Home Page
-
-
-
-![Home Page](client/src/images/Home.PNG)
-
-
-
-
-### Add Animal Page
-
-
-
-![Add Animal Page](client/src/images/AddAnimal.png)
-
 
 ### Technologies Used:
 <ul>
@@ -59,12 +36,12 @@ As a user I would be able to log in to the system, to see the shelter animals’
 
 ### Team Member Roles:
 <ul>
-<li>Lynn - UI Master(Frontend)</li>
-<li>Bindhu - Lead Frontend Designer</li>
-<li>Sara - Director of Organization (Backend)</li>
-<li>Zoe - Senior (Backend - Routes)</li>
-<li>Sarah - Scrum Master/Project Manager (Backend - Front End if needed)</li>
-<li>Ben - Master of All Trades (Frontend/Backend)</li>
+<li>Lynn Amsbury - UI/UX (Front End)</li>
+<li>Bindhu Sivanand - UI/UX (Front End)</li>
+<li>Sara Overby - Back End</li>
+<li>Zoë Gonzales - Back End - Routes</li>
+<li>Sarah Jaffe - Scrum Master/Project Manager, Backend - Front End if needed</li>
+<li>Ben Zamora - Front and Back End</li>
 </ul>
 
 ## About This Boilerplate
