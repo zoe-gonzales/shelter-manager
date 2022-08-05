@@ -28,7 +28,7 @@
     "if-env": "^1.0.4",
     "moment": "^2.24.0",
     "mongojs": "^2.6.0",
-    "mongoose": "^5.5.9",
+    "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "path": "^0.12.7",
     "pdfkit": "^0.9.1"
